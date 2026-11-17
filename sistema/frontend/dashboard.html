@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Início - Clínica Vet</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-pagina="dashboard">
+  <div class="app">
+    <aside class="menu">
+      <div class="marca">Clínica Vet<small>Sistema de gestão</small></div>
+      <nav>
+        <a href="dashboard.html">Início</a>
+        <a href="tutores.html">Tutores</a>
+        <a href="pets.html">Pets</a>
+        <a href="agendamentos.html">Agendamentos</a>
+      </nav>
+    </aside>
+
+    <div>
+      <div class="topo">
+        <h1>Início</h1>
+        <div class="usuario">
+          <span id="nomeUsuario"></span>
+          <button id="btnSair" class="btn-sair">Sair</button>
+        </div>
+      </div>
+
+      <main>
+        <p id="msgDashboard" class="aviso" hidden></p>
+
+        <div class="cards">
+          <a class="card-num" href="tutores.html">
+            <span>Tutores</span>
+            <strong id="totalTutores">-</strong>
+          </a>
+          <a class="card-num" href="pets.html">
+            <span>Pets</span>
+            <strong id="totalPets">-</strong>
+          </a>
+          <a class="card-num" href="agendamentos.html">
+            <span>Agendamentos</span>
+            <strong id="totalAgendamentos">-</strong>
+          </a>
+        </div>
+
+        <section class="card secao">
+          <div class="card-topo">
+            <h2>Próximos agendamentos</h2>
+            <a href="agendamentos.html" class="muted">Ver todos</a>
+          </div>
+          <ul class="lista-simples" id="proximos"></ul>
+        </section>
+      </main>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

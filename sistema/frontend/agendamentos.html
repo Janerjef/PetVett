@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agendamentos - Clínica Vet</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-pagina="agendamentos">
+  <div class="app">
+    <aside class="menu">
+      <div class="marca">Clínica Vet<small>Sistema de gestão</small></div>
+      <nav>
+        <a href="dashboard.html">Início</a>
+        <a href="tutores.html">Tutores</a>
+        <a href="pets.html">Pets</a>
+        <a href="agendamentos.html">Agendamentos</a>
+      </nav>
+    </aside>
+
+    <div>
+      <div class="topo">
+        <h1>Agendamentos</h1>
+        <div class="usuario">
+          <span id="nomeUsuario"></span>
+          <button id="btnSair" class="btn-sair">Sair</button>
+        </div>
+      </div>
+
+      <main>
+        <section class="card">
+          <div class="card-topo">
+            <h2>Agenda</h2>
+            <div class="acoes">
+              <select id="filtroStatus" aria-label="Filtrar por status">
+                <option value="">Todos os status</option>
+                <option>Agendado</option>
+                <option>Concluído</option>
+              </select>
+            </div>
+          </div>
+          <div class="tabela-scroll">
+            <table>
+              <thead>
+                <tr>
+                  <th>Data/Hora</th><th>Serviço</th><th>Status</th>
+                  <th>Pet</th><th>Tutor</th><th>Telefone</th><th></th>
+                </tr>
+              </thead>
+              <tbody id="tabelaAgendamentos"></tbody>
+            </table>
+          </div>
+        </section>
+
+        <div class="formularios secao">
+          <section class="card">
+            <div class="card-topo">
+              <h3>Novo agendamento</h3>
+            </div>
+            <div class="card-corpo">
+              <form id="formAgendamento">
+                <div class="campo">
+                  <label for="agPet">Pet</label>
+                  <select id="agPet" required>
+                    <option value="">Selecione o pet...</option>
+                  </select>
+                </div>
+                <div class="campo">
+                  <label for="agData">Data e hora</label>
+                  <input type="datetime-local" id="agData" required>
+                </div>
+                <div class="campo">
+                  <label for="agServico">Serviço</label>
+                  <input type="text" id="agServico" placeholder="Consulta, vacina, banho..." required>
+                </div>
+                <p id="msgAgendamento" class="aviso" hidden></p>
+                <div class="acoes">
+                  <button type="submit">Agendar</button>
+                </div>
+              </form>
+            </div>
+          </section>
+
+          <section class="card" id="secaoEditar" hidden>
+            <div class="card-topo">
+              <h3>Remarcar agendamento</h3>
+            </div>
+            <div class="card-corpo">
+              <p id="infoEditar" class="muted"></p>
+              <form id="formEditarData">
+                <input type="hidden" id="agendamentoId">
+                <div class="campo">
+                  <label for="novaData">Nova data e hora</label>
+                  <input type="datetime-local" id="novaData" required>
+                </div>
+                <p id="msgEditar" class="aviso" hidden></p>
+                <div class="acoes">
+                  <button type="submit">Salvar data</button>
+                  <button type="button" id="btnCancelarEditar" class="secundario">Cancelar</button>
+                </div>
+              </form>
+            </div>
+          </section>
+        </div>
+      </main>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pets - Clínica Vet</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-pagina="pets">
+  <div class="app">
+    <aside class="menu">
+      <div class="marca">Clínica Vet<small>Sistema de gestão</small></div>
+      <nav>
+        <a href="dashboard.html">Início</a>
+        <a href="tutores.html">Tutores</a>
+        <a href="pets.html">Pets</a>
+        <a href="agendamentos.html">Agendamentos</a>
+      </nav>
+    </aside>
+
+    <div>
+      <div class="topo">
+        <h1>Pets</h1>
+        <div class="usuario">
+          <span id="nomeUsuario"></span>
+          <button id="btnSair" class="btn-sair">Sair</button>
+        </div>
+      </div>
+
+      <main>
+        <p id="msgPet" class="aviso" hidden></p>
+
+        <div class="painel">
+          <section class="card">
+            <div class="card-topo">
+              <h2>Pets cadastrados</h2>
+            </div>
+            <div class="card-corpo">
+              <div class="campo">
+                <input type="text" id="buscaPet" placeholder="Buscar por nome, espécie, raça ou tutor...">
+              </div>
+            </div>
+            <div class="tabela-scroll">
+              <table>
+                <thead>
+                  <tr><th>Nome</th><th>Espécie</th><th>Raça</th><th>Nascimento</th><th>Tutor</th></tr>
+                </thead>
+                <tbody id="tabelaPets"></tbody>
+              </table>
+            </div>
+          </section>
+
+          <section class="card">
+            <div class="card-topo">
+              <h3>Novo pet</h3>
+            </div>
+            <div class="card-corpo">
+              <form id="formPet">
+                <div class="campo">
+                  <label for="petNome">Nome</label>
+                  <input type="text" id="petNome" required>
+                </div>
+                <div class="campo">
+                  <label for="petEspecie">Espécie</label>
+                  <input type="text" id="petEspecie" placeholder="Cachorro, Gato..." required>
+                </div>
+                <div class="campo">
+                  <label for="petRaca">Raça</label>
+                  <input type="text" id="petRaca">
+                </div>
+                <div class="campo">
+                  <label for="petNascimento">Data de nascimento</label>
+                  <input type="date" id="petNascimento">
+                </div>
+                <div class="campo">
+                  <label for="petTutor">Tutor</label>
+                  <select id="petTutor" required>
+                    <option value="">Selecione o tutor...</option>
+                  </select>
+                </div>
+                <div class="acoes">
+                  <button type="submit">Cadastrar pet</button>
+                </div>
+              </form>
+            </div>
+          </section>
+        </div>
+      </main>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

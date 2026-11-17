@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Entrar - Clínica Vet</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-pagina="login" class="pagina-login">
+  <div class="login-caixa">
+    <div class="login-marca">Clínica Vet<small>Sistema de gestão</small></div>
+
+    <form id="formLogin">
+      <div class="campo">
+        <label for="login">Usuário</label>
+        <input type="text" id="login" autocomplete="username" required autofocus>
+      </div>
+
+      <div class="campo">
+        <label for="senha">Senha</label>
+        <input type="password" id="senha" autocomplete="current-password" required>
+      </div>
+
+      <p id="msgErro" class="aviso" hidden></p>
+
+      <button type="submit">Entrar</button>
+    </form>
+
+    <small>Teste: admin / admin123</small>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
